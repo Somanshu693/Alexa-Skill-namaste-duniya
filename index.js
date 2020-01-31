@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'नमस्ते, आप hello या help कह सकते हो. आप क्या करना चाहेंगे?';
+        const speakOutput = 'नमस्ते, आप hello या नमस्ते बोल सकते  हैं  ';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
@@ -34,7 +34,7 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'You can say hello to me! How can I help?';
+        const speakOutput = 'आप मुझे नमस्ते कह सकते हैं! मैं आपकी कैसे मदद कर सकता हूँ?';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -93,7 +93,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         console.log(`~~~~ Error handled: ${error.stack}`);
-        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
+        const speakOutput = `क्षमा करें, आपने जो पूछा, उसे करने में मुझे परेशानी हुई। कृपया पुन: प्रयास करें.`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
